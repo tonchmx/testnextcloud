@@ -1,3 +1,7 @@
 <div ng-controller="CatalogoController" ng-init="getCatalogo()">
-    {{ productos }}
+    <p ng-click="reverse=!reverse">Cambiar orden</p>
+    <ul ng-repeat="producto in productos | orderBy:predicate:reverse">
+        <li><a ng-href="/#/{{producto.sku}}"> {{producto.description}}</a></li>
+    </ul>
+
 </div>
