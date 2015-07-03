@@ -1,3 +1,7 @@
-<div ng-controller="CatalogoController" ng-init="getProducto()">
-    {{ producto }}
+<div class="row" ng-controller="CatalogoController" ng-init="getProducto()">
+    <ul data-orbit>
+        <li ng-repeat="picture in producto.pictures">
+            <img ng-src="http://{{picture}}" alt=""/>
+        </li>
+    </ul>
 </div>

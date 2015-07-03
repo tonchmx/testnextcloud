@@ -1,7 +1,18 @@
 <div ng-controller="CatalogoController" ng-init="getCatalogo()">
     <p ng-click="reverse=!reverse">Cambiar orden</p>
-    <ul ng-repeat="producto in productos | orderBy:predicate:reverse">
-        <li><a ng-href="/#/{{producto.sku}}"> {{producto.description}}</a></li>
+    <div>
+
+    </div>
+    <ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-1">
+        <li ng-repeat="producto in productos | orderBy:predicate:reverse">
+            <span class="th">
+                <a ng-href="#/{{producto.sku}}">
+                    <img ng-src="http://{{producto.image}}" alt=""/>
+                </a>
+                <button ng-click="agregarAlCarrito(producto.sku)">Agregar al carrito</button>
+            </span>
+
+        </li>
     </ul>
 
 </div>
