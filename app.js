@@ -1,5 +1,5 @@
 var mainApplicationModuleName = 'nextcloud';
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'ngResource', 'slick', 'LocalStorageModule', 'catalogo']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'ngResource', 'slick', 'LocalStorageModule', 'angular-loading-bar', 'toaster', 'ngAnimate', 'catalogo']);
 
 mainApplicationModule
     .config(['localStorageServiceProvider',

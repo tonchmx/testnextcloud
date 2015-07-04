@@ -1,5 +1,5 @@
-angular.module('catalogo').controller('CatalogoController', ['$scope', '$sce', '$routeParams', 'Catalogo', 'localStorageService',
-    function($scope, $sce, $routeParams, Catalogo, localStorageService) {
+angular.module('catalogo').controller('CatalogoController', ['$scope', '$sce', '$routeParams', 'Catalogo', 'localStorageService', 'toaster',
+    function($scope, $sce, $routeParams, Catalogo, localStorageService, toaster) {
 
         $scope.predicate = 'fecha_alta';
         $scope.reverse = true;
@@ -63,7 +63,7 @@ angular.module('catalogo').controller('CatalogoController', ['$scope', '$sce', '
                     };
                     carrolocal = carro;
                 }
-
+                toaster.pop('success', "Producto agregado", "¡El producto se agregó con éxito al carrito!");
                 return localStorageService.set('carrito', carrolocal);
             });
         };

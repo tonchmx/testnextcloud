@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./vendor/foundation/css/normalize.css"/>
     <link rel="stylesheet" href="./vendor/foundation/css/foundation.css"/>
     <link rel="stylesheet" href="./vendor/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="./vendor/angularjs-toaster/toaster.css"/>
+    <link rel="stylesheet" href="./vendor/angular-loading-bar/build/loading-bar.css" media="all"/>
 
     <script type="text/javascript" src="./vendor/foundation/js/vendor/modernizr.js"></script>
 </head>
@@ -26,6 +28,8 @@
             </ul>
         </section>
     </nav>
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+
     <br/>
 
     <section class="row" ng-view></section>
@@ -43,6 +47,9 @@
     <script type="text/javascript" src="./vendor/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./vendor/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="./vendor/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script type="text/javascript" src="./vendor/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="./vendor/angular-loading-bar/build/loading-bar.js"></script>
+    <script type="text/javascript" src="./vendor/angularjs-toaster/toaster.js"></script>
 
     <script type="text/javascript" src="./app.js"></script>
 
