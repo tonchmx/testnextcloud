@@ -29,14 +29,6 @@
                 <div class="small-6 columns">
                     <b>Precio</b>
                     <h2>$ {{ producto.price | number:2}} MXN</h2>
-                    <hr/>
-                    <div ng-if="producto.batches.length > 0">
-                        Seleccione el paquete: <br/>
-                        <span ng-repeat="batch in producto.batches">
-                            <button class="button tiny radius"  ng-click="changeBatch()"> {{ batch.batch}}</button>
-                        </span>
-
-                    </div>
                 </div>
                 <div class="small-6 columns">
                     <form ng-submit="agregarAlCarrito(producto.sku)">
@@ -45,7 +37,7 @@
                                 <span class="prefix">Cantidad</span>
                             </div>
                             <div class="small-7 columns">
-                                <input ng-model="cantidad" name="cantidad" type="number" min="1" placeholder="Cantidad"/>
+                                <input ng-model="cantidad" name="cantidad" type="number" min="1"  value="1" placeholder="1"/>
                             </div>
                         </div>
                         <button type="submit">Agregar al carrito</button>

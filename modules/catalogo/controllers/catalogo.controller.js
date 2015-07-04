@@ -39,8 +39,6 @@ angular.module('catalogo').controller('CatalogoController', ['$scope', '$sce', '
             if(formCantidad == null || formCantidad == 0){
                 formCantidad = 1;
             }
-
-            console.log(formCantidad);
             var producto = Catalogo.get({sku: sku}, function(){
                 var carrolocal = localStorageService.get('carrito');
                 if(carrolocal){
@@ -70,9 +68,34 @@ angular.module('catalogo').controller('CatalogoController', ['$scope', '$sce', '
 
         $scope.getCarrito = function(){
             var carrito = localStorageService.get('carrito');
+            var total = 0;
+            for(var producto in carrito){
+                if(carrito.hasOwnProperty(producto)){
+                    var obj = carrito[producto];
+                    var totalObj = obj.cantidad * obj.precio;
+                    total += totalObj;
+                }
+            }
             $scope.carrito = carrito;
-            var size = Object.size(carrito);
-            console.log(size);
+            $scope.total = total;
+            $scope.sizeCarrito = Object.size(carrito);
+        };
+
+        $scope.eliminarProducto = function(sku){
+            var carrolocal = localStorageService.get('carrito');
+            delete carrolocal[sku];
+            if(localStorageService.set('carrito', carrolocal)){
+                toaster.pop('error', "Producto eliminado", "¡El producto se eliminó con éxito del carrito!");
+                $scope.getCarrito();
+            }
+        };
+
+        $scope.cambio = function(sku){
+            var carrolocal = localStorageService.get('carrito');
+            carrolocal[sku].cantidad = this.producto.cantidad;
+            if(localStorageService.set('carrito', carrolocal)){
+                $scope.getCarrito();
+            }
         };
 
         Object.size = function(obj) {
