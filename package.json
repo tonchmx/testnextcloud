@@ -1,0 +1,16 @@
+{
+  "name": "nextcloud",
+  "version": "1.0.0",
+  "description": "Test Front End",
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "author": "Antonio Cruz",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "http-server": "^0.8.0"
+  }
+}

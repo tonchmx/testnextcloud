@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nextcloud</title>
+
+    <link rel="stylesheet" href="./vendor/foundation/css/normalize.css"/>
+    <link rel="stylesheet" href="./vendor/foundation/css/foundation.css"/>
+    <link rel="stylesheet" href="./vendor/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" href="./vendor/angularjs-toaster/toaster.css"/>
+    <link rel="stylesheet" href="./vendor/angular-loading-bar/build/loading-bar.css" media="all"/>
+
+    <script type="text/javascript" src="./vendor/foundation/js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/#/">Next-cloud</a></h1>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="right">
+                <li>
+                    <a href="/#/carrito">Carrito</a>
+                </li>
+            </ul>
+        </section>
+    </nav>
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+
+    <br/>
+
+    <section class="row" ng-view></section>
+
+    <script type="text/javascript" src="./vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="./vendor/slick-carousel/slick/slick.js"></script>
+    <script type="text/javascript" src="./vendor/angular-slick/dist/slick.js"></script>
+    <script type="text/javascript" src="./vendor/foundation/js/foundation.js"></script>
+
+    <script>
+        $(document).foundation();
+    </script>
+
+    <script type="text/javascript" src="./vendor/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="./vendor/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="./vendor/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script type="text/javascript" src="./vendor/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="./vendor/angular-loading-bar/build/loading-bar.js"></script>
+    <script type="text/javascript" src="./vendor/angularjs-toaster/toaster.js"></script>
+
+    <script type="text/javascript" src="./app.js"></script>
+
+    <script type="text/javascript" src="./modules/catalogo/catalogo.module.js"></script>
+    <script type="text/javascript" src="./modules/catalogo/config/catalogo.routes.js"></script>
+    <script type="text/javascript" src="./modules/catalogo/services/catalogo.service.js"></script>
+    <script type="text/javascript" src="./modules/catalogo/controllers/catalogo.controller.js"></script>
+</body>
+</html>

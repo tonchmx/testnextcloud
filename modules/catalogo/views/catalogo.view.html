@@ -1,0 +1,21 @@
+<div ng-controller="CatalogoController" ng-init="getCatalogo()">
+    <div>
+        <select ng-options="order as order.name for order in orders" ng-model="orden" ng-change="cambiarOrden()">
+        </select>
+    </div>
+    <ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-1">
+        <li ng-repeat="producto in productos | orderBy:predicate:reverse">
+            <div class="text-center th">
+
+                <a ng-href="#/{{producto.sku}}">
+                    <img ng-src="http://{{producto.image}}" alt=""/>
+                </a>
+                <p>{{producto.description}}</p>
+                <h3>${{producto.price | number:2}} MXN </h3>
+                <h6 ng-if="producto.batch_price_of">Precio paquete ${{producto.batch_price_of}} MXN</h6>
+                <button ng-click="agregarAlCarrito(producto.sku)">Agregar al carrito</button>
+            </div>
+        </li>
+    </ul>
+
+</div>
