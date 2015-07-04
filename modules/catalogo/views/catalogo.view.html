@@ -1,6 +1,6 @@
 <div ng-controller="CatalogoController" ng-init="getCatalogo()">
     <div>
-        <select ng-options="order as order.name for order in orders" ng-model="orden" ng-selected="0" ng-change="cambiarOrden()">
+        <select ng-options="order as order.name for order in orders" ng-model="orden" ng-change="cambiarOrden()">
         </select>
     </div>
     <ul class="large-block-grid-4 medium-block-grid-3 small-block-grid-1">

@@ -1,0 +1,25 @@
+<div ng-controller="CatalogoController" ng-init="getCarrito()">
+    <ul class="breadcrumbs">
+        <li><a href="/#/">Catalogo</a></li>
+        <li class="current">Carrito</li>
+    </ul>
+    <div id="resumen">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU</th><th>Precio Unitario</th><th>Cantidad</th><th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="producto in carrito">
+                    <td><a ng-href="/#/{{producto.sku}}">{{ producto.sku }}</a></td>
+                    <td>$ {{ producto.precio | number:2 }} MXN</td>
+                    <td> {{ producto.cantidad }}</td>
+                    <td>$ {{ producto.precio * producto.cantidad | number: 2}} MXN</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

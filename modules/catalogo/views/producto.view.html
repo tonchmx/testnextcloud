@@ -39,15 +39,17 @@
                     </div>
                 </div>
                 <div class="small-6 columns">
-                    <div class="row collapse">
-                        <div class="small-5 columns">
-                            <span class="prefix">Cantidad</span>
+                    <form ng-submit="agregarAlCarrito(producto.sku)">
+                        <div class="row collapse">
+                            <div class="small-5 columns">
+                                <span class="prefix">Cantidad</span>
+                            </div>
+                            <div class="small-7 columns">
+                                <input ng-model="cantidad" name="cantidad" type="number" min="1" placeholder="Cantidad"/>
+                            </div>
                         </div>
-                        <div class="small-7 columns">
-                            <input type="number" min="1" placeholder="Cantidad" value="1"/>
-                        </div>
-                    </div>
-                    <button ng-click="agregarAlCarrito(producto.sku)">Agregar al carrito</button>
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
